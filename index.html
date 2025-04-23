@@ -14,86 +14,67 @@
 
   <style>
     body {
-      font-family: 'Open Sans', sans-serif;
-      overflow-x: hidden;
-    }
+  font-family: 'Open Sans', sans-serif;
+}
 
-    .navbar {
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(100px);
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-      animation: fadeInDown 1s ease forwards;
-    }
+.navbar {
+  background: rgba(0, 0, 0, 0.5); /* transparent background */
+  backdrop-filter: blur(100px); /* soft blur effect */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInDown 1s ease forwards;
+}
 
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .navbar.navbar-light {
-      background-color: transparent !important;
-    }
 
-    .navbar.navbar-light .navbar-nav .nav-link {
-      color: white;
-      font-size: 1.1rem;
-      padding: 10px 20px;
-      transition: color 0.3s ease;
-    }
+.navbar.navbar-light {
+  background-color: transparent !important;
+  
+}
 
-    @media (max-width: 991px) {
-      .navbar-collapse {
-        background: rgba(0, 0, 0, 0.8);
-        padding: 15px;
-        border-radius: 8px;
-        margin-top: 10px;
-      }
-      
-      .navbar-scrolled .navbar-collapse {
-        background: white;
-      }
-    }
+.navbar.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
 
-    .navbar-nav .nav-item {
-      margin-left: 15px;
-    }
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
 
-    @media (max-width: 991px) {
-      .navbar-nav .nav-item {
-        margin-left: 0;
-        margin-bottom: 5px;
-      }
-    }
+.navbar-scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .navbar-scrolled {
-      background-color: #ffffff !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+.navbar-scrolled .navbar-nav .nav-link {
+  color: #4e54c8 !important;
+}
 
-    .navbar-scrolled .navbar-nav .nav-link {
-      color: #4e54c8 !important;
-    }
+.navbar-brand {
+  font-weight: bold;
+  color: white;
+}
 
-    .navbar-brand {
-      font-weight: bold;
-      color: white;
-    }
+.navbar-brand, .navbar-nav .nav-link {
+  transition: color 0.3s ease;
+}
 
-    .navbar-brand, .navbar-nav .nav-link {
-      transition: color 0.3s ease;
-    }
+.navbar-nav .nav-item.active .nav-link {
+  color: #4e54c8;
+}
 
-    .navbar-nav .nav-item.active .nav-link {
-      color: #4e54c8;
-    }
-
-    .hero {
+.hero {
       height: 100vh;
       background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('img/bg.png') center center / cover no-repeat;
       color: white;
@@ -105,12 +86,6 @@
       background-attachment: fixed;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        background-attachment: scroll;
-        height: 80vh;
-      }
-    }
 
     .hero h1 {
       font-size: 3.5rem;
@@ -119,28 +94,10 @@
       animation: fadeInDown 1s ease-in-out;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-    }
-
     .hero p {
       font-size: 1.2rem;
       margin-top: 20px;
       opacity: 0.85;
-    }
-
-    @media (max-width: 768px) {
-      .hero p {
-        font-size: 1rem;
-      }
     }
 
     .hero .btn {
@@ -149,13 +106,6 @@
       font-weight: 600;
       transition: all 0.3s ease-in-out;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    @media (max-width: 576px) {
-      .hero .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
     }
 
     .hero .btn:hover {
@@ -173,12 +123,6 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 15px;
-    }
-
-    @media (max-width: 768px) {
-      .section-title h2 {
-        font-size: 2rem;
-      }
     }
 
     .section-title p {
@@ -203,217 +147,143 @@
       padding: 40px 0;
     }
 
+
     .feature-tabs {
-      margin: 30px 0;
-      flex-wrap: wrap;
-    }
-    
-    @media (max-width: 576px) {
-      .feature-tabs .btn-group {
-        flex-direction: column;
-        width: 100%;
-      }
-      
-      .feature-tab {
-        margin-bottom: 10px;
-        width: 100%;
-      }
-    }
-    
-    .feature-tab {
-      background-color: #f8f9fa;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      margin: 0 5px;
-      padding: 8px 20px;
-      border: none;
-    }
-    
-    .feature-tab.active {
-      background-color: #0d6efd;
-      color: white;
-      box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
-    }
-    
-    .section-title {
-      margin-bottom: 20px;
-    }
-    
-    .section-title h2 {
-      position: relative;
-      padding-bottom: 15px;
-      margin-bottom: 15px;
-    }
-    
-    .section-title h2:after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: #0d6efd;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    .feature-list .text-primary {
-      color: #0d6efd !important;
-      font-weight: bold;
-    }
-    
-    .tab-content {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .tab-content.active {
-      display: block;
-      opacity: 1;
-    }
+    margin: 30px 0;
+  }
+  
+  .feature-tab {
+    background-color: #f8f9fa;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+    padding: 8px 20px;
+    border: none;
+  }
+  
+  .feature-tab.active {
+    background-color: #0d6efd;
+    color: white;
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+  }
+  
+  .section-title {
+    margin-bottom: 20px;
+  }
+  
+  .section-title h2 {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .section-title h2:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #0d6efd;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .feature-list .text-primary {
+    color: #0d6efd !important;
+    font-weight: bold;
+  }
+  
+  .tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tab-content.active {
+    display: block;
+    opacity: 1;
+  }
 
-    /* service */
-    .service-card {
-      border-radius: 15px;
-      background: white;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-    
-    .card-img-top {
-      height: 200px;
-      object-fit: cover;
-      width: 100%;
-    }
-    
-    @media (max-width: 576px) {
-      .card-img-top {
-        height: 180px;
-      }
-    }
-    
-    .card-content {
-      padding: 25px;
-    }
-    
-    @media (max-width: 576px) {
-      .card-content {
-        padding: 15px;
-      }
-    }
-    
-    .card-content h4 {
-      color: #333;
-      font-size: 1.5rem;
-    }
-    
-    @media (max-width: 768px) {
-      .card-content h4 {
-        font-size: 1.3rem;
-      }
-    }
-    
-    .card-content p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    
-    @media (max-width: 576px) {
-      .card-content p {
-        font-size: 0.9rem;
-      }
-    }
-    
-    .btn-primary {
-      background-color: #007bff;
-      border: none;
-      padding: 8px 25px;
-      font-weight: 500;
-      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
-    }
-    
-    .btn-primary:hover {
-      background-color: #0069d9;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
-    }
-    
-    /* carousel */
-    .logo-carousel {
-      padding: 40px 0;
-    }
+  /* service */
+  .service-card {
+    border-radius: 15px;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .card-content {
+    padding: 25px;
+  }
+  
+  .card-content h4 {
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+  .card-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 8px 25px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  }
+  
+  .btn-primary:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* couresell */
+  /* Logo Carousel Styling */
+.logo-carousel {
+  padding: 40px 0;
+}
 
-    .logo-carousel img {
-      transition: opacity 0.1s ease;
-      filter: grayscale(100%);
-      max-height: 80px;
-    }
-    
-    @media (max-width: 576px) {
-      .logo-carousel img {
-        max-height: 50px;
-        margin-bottom: 10px;
-      }
-      
-      .logo-carousel .d-flex {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .logo-carousel .d-flex img {
-        width: 40%;
-        margin: 0 5px 15px;
-      }
-    }
+.logo-carousel img {
+  transition: opacity 0.1s ease;
+  filter: grayscale(100%);
+}
 
-    .logo-carousel img:hover {
-      opacity: 1;
-      filter: grayscale(0%);
-    }
+.logo-carousel img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
 
-    .carousel-indicators [data-bs-target] {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #ccc;
-      opacity: 0.5;
-      border: none;
-      margin: 0 5px;
-    }
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  opacity: 0.5;
+  border: none;
+  margin: 0 5px;
+}
 
-    .carousel-indicators .active {
-      background-color: #0d6efd;
-      opacity: 1;
-    }
-    
-    /* Form responsiveness */
-    @media (max-width: 576px) {
-      .form-control {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.75rem;
-      }
-    }
-    
-    /* Spacing adjustments for mobile */
-    @media (max-width: 576px) {
-      .py-5 {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-      }
-      
-      .mb-4 {
-        margin-bottom: 1.5rem !important;
-      }
-    }
+.carousel-indicators .active {
+  background-color: #0d6efd;
+  opacity: 1;
+}
   </style>
 </head>
 
@@ -423,24 +293,24 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#home">
-        <img src="img/logo.webp" alt="Logo" height="70" class="img-fluid" style="max-height: 70px;">
+        <img src="img/logo.webp" alt="Logo" height="90">
       </a>      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link px-3" href="index.html">Home</a>
+            <a class="nav-link px-4" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#features">About</a>
+            <a class="nav-link px-4" href="#features">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#pricing">Services</a>
+            <a class="nav-link px-4" href="#pricing">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#contact">Contact</a>
+            <a class="nav-link px-4" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -450,14 +320,10 @@
 
 <!-- Hero Section -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <h1 data-aos="fade-down" class="mt-5 pt-5">Pahrump Realtor</h1>
-        <p data-aos="fade-up">MARCI METZGER - THE RIDGE REALTY GROUP</p>
-        <a href="#features" class="btn btn-light btn-lg mt-4" data-aos="zoom-in">CALL NOW</a>
-      </div>
-    </div>
+  <div>
+    <h1 data-aos="fade-down"><br><br><br><br>Pahrump Realtor</h1>
+    <p data-aos="fade-up">MARCI METZGER - THE RIDGE REALTY GROUP</p>
+    <a href="#features" class="btn btn-light btn-lg mt-4" data-aos="zoom-in">CALL NOW</a>
   </div>
 </section>
 
@@ -480,7 +346,7 @@
     <!-- Tab Content 1 (Default Active) -->
     <div class="tab-content active" id="tab-1">
       <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="col-lg-6">
           <h3 class="mb-4">Top Residential Sales Last 5 Years</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <div class="feature-list mt-4">
@@ -499,7 +365,7 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <img src="img/image.png" class="img-fluid rounded" alt="Features">
+          <img src="img/image.png" class="img-fluid" alt="Features">
         </div>
       </div>
     </div>
@@ -507,17 +373,30 @@
     <!-- Tab Content 2 -->
     <div class="tab-content" id="tab-2">
       <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="col-lg-6">
           <h3 class="mb-4">Don't Just List it...</h3>
           <p>Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips of every possible buyer, getting you top dollar for your home.</p>
           <div class="feature-list mt-4">
             <div class="d-flex mb-3">
-              <!-- Content removed for brevity -->
+              <!-- <span class="me-2 text-primary">✓</span>
+              <div>Sed ullamcorper morbi tincidunt ornare massa eget egestas purus.</div> -->
+            </div>
+            <div class="d-flex mb-3">
+              <!-- <span class="me-2 text-primary">✓</span>
+              <div>Facilisis magna etiam tempor orci eu lobortis elementum.</div> -->
+            </div>
+            <div class="d-flex mb-3">
+              <!-- <span class="me-2 text-primary">✓</span>
+              <div>Eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices.</div> -->
+            </div>
+            <div class="d-flex mb-3">
+              <!-- <span class="me-2 text-primary">✓</span>
+              <div>Dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis.</div> -->
             </div>
           </div>
         </div>
         <div class="col-lg-6">
-          <img src="img/image (1).png" class="img-fluid rounded" alt="Features">
+          <img src="img/image (1).png" class="img-fluid" alt="Features">
         </div>
       </div>
     </div>
@@ -525,7 +404,7 @@
     <!-- Tab Content 3 -->
     <div class="tab-content" id="tab-3">
       <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="col-lg-6">
           <h3 class="mb-4">Guide to Buyers</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
           <div class="feature-list mt-4">
@@ -541,10 +420,14 @@
               <span class="me-2 text-primary">✓</span>
               <div>Market analysis, upgrades lists, contractors on speed dial, & more!</div>
             </div>
+            <div class="d-flex mb-3">
+              <!-- <span class="me-2 text-primary">✓</span>
+              <div>Dignissim convallis aenean et tortor at risus viverra adipiscing at in tellus integer.</div> -->
+            </div>
           </div>
         </div>
         <div class="col-lg-6">
-          <img src="img/image (2).png" class="img-fluid rounded" alt="Features">
+          <img src="img/image (2).png" class="img-fluid" alt="Features">
         </div>
       </div>
     </div>
@@ -555,20 +438,20 @@
 <!-- Testimonials -->
 <section id="testimonials" class="bg-light py-5">
   <div class="container">
-    <div class="section-title text-center">
+    <div class="section-title">
       <h2>What People Say</h2>
     </div>
     <div class="row">
-      <div class="col-md-6 mb-4" data-aos="fade-right">
+      <div class="col-md-6" data-aos="fade-right">
         <blockquote class="blockquote border-start border-4 ps-4" style="border-color: #4e54c8;">
           <p class="mb-2 fs-5 fst-italic">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"</p>
-          <footer class="blockquote-footer mt-2">Lorem ipsum<cite title="Company"> CEO</cite></footer>
+          <footer class="blockquote-footer mt-2">Lorem ipsum<cite title="Company">CEO</cite></footer>
         </blockquote>
       </div>
-      <div class="col-md-6 mb-4" data-aos="fade-left">
+      <div class="col-md-6" data-aos="fade-left">
         <blockquote class="blockquote border-start border-4 ps-4" style="border-color: #4e54c8;">
           <p class="mb-2 fs-5 fst-italic">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-          <footer class="blockquote-footer mt-2">Lorem ipsum <cite title="Company"> Developer</cite></footer>
+          <footer class="blockquote-footer mt-2">Lorem ipsum <cite title="Company">Developer</cite></footer>
         </blockquote>
       </div>
     </div>
@@ -582,7 +465,7 @@
       <p>Choose the service that fits your needs</p>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in">
+      <div class="col-md-4 mb-4" data-aos="zoom-in">
         <div class="service-card h-100">
           <img src="img/image (3).png" class="card-img-top" alt="Real Estate Service">
           <div class="card-content text-center p-4 d-flex flex-column">
@@ -595,7 +478,7 @@
         </div>
       </div>
       
-      <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="service-card h-100">
           <img src="img/image (4).png" class="card-img-top" alt="Commercial & Residential">
           <div class="card-content text-center p-4 d-flex flex-column">
@@ -608,13 +491,13 @@
         </div>
       </div>
       
-      <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="service-card h-100">
           <img src="img/image (5).png" class="card-img-top" alt="Expert Services">
           <div class="card-content text-center p-4 d-flex flex-column">
             <h4 class="fw-bold mb-3">Rely on Expertise</h4>
             <p class="text-muted flex-grow-1">If you have questions about affordability, credit, and loan options, trust us to connect you with the right people to get the answers you need in a timely fashion.</p>
-            <div class="mt-auto pt-3">
+            <div class="mt-auto pt-3"><br><br>
               <a href="#" class="btn btn-primary rounded-pill px-4">Select</a>
             </div>
           </div>
@@ -623,9 +506,8 @@
     </div>
   </div>
 </section>
-
 <!-- Client/Partner Logos Carousel -->
-<section class="logo-carousel py-5 bg-white" id="partner">
+<section class="logo-carousel py-5 bg-white"id="partner">
   <div class="container">
     <div class="section-title text-center mb-4">
       <h2>Our Partners</h2>
@@ -638,20 +520,20 @@
           <div class="carousel-inner">
             <!-- First slide with 4 logos -->
             <div class="carousel-item active">
-              <div class="d-flex justify-content-around align-items-center flex-wrap">
-                <img src="img/image (6).png" class="img-fluid px-3" alt="Partner Logo">
-                <img src="img/image (7).png" class="img-fluid px-3" alt="Partner Logo">
-                <img src="img/image (8).png" class="img-fluid px-3" alt="Partner Logo">
-                <img src="img/image (9).png" class="img-fluid px-3" alt="Partner Logo">
+              <div class="d-flex justify-content-around align-items-center">
+                <img src="img/image (6).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
+                <img src="img/image (7).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
+                <img src="img/image (8).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
+                <img src="img/image (9).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
               </div>
             </div>
             <!-- Second slide with 4 more logos -->
             <div class="carousel-item">
-              <div class="d-flex justify-content-around align-items-center flex-wrap">
-                <img src="img/image (6).png" class="img-fluid px-3" alt="Partner Logo">
-                <img src="img/image (7).png" class="img-fluid px-3" alt="Partner Logo">
-                <img src="img/image (8).png" class="img-fluid px-3" alt="Partner Logo">
-                <img src="img/image (9).png" class="img-fluid px-3" alt="Partner Logo">
+              <div class="d-flex justify-content-around align-items-center">
+                <img src="img/image (6).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
+                <img src="img/image (7).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
+                <img src="img/image (8).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
+                <img src="img/image (9).png" class="img-fluid px-3" alt="Partner Logo" style="max-height: 80px; opacity: 0.7;">
               </div>
             </div>
           </div>
@@ -666,31 +548,26 @@
     </div>
   </div>
 </section>
-
 <!-- Contact Section -->
 <section id="contact" class="bg-light py-5">
   <div class="container">
-    <div class="section-title text-center">
+    <div class="section-title">
       <h2>Contact Us</h2>
       <p>We'd love to hear from you</p>
     </div>
     <form>
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="col-12 mb-3">
-              <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
-            </div>
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <input type="text" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <div class="col-12 mb-3">
+          <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </div>
       </div>
     </form>
@@ -710,28 +587,27 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1500,
-    once: true, // whether animation should happen only once - while scrolling down
-    disable: window.innerWidth < 768 // disable animations on small devices for better performance
+    duration: 1500, // Slow down the animation duration to 1500ms
   });
 
   // Change navbar style on scroll
-  function handleScroll() {
+  window.onscroll = function() {
     var navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
       navbar.classList.add('navbar-scrolled');
     } else {
       navbar.classList.remove('navbar-scrolled');
     }
+  };
+  window.onscroll = function() {
+  var navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('navbar-scrolled');
+  } else {
+    navbar.classList.remove('navbar-scrolled');
   }
-
-  window.addEventListener('scroll', handleScroll);
-  
-  // Call once on page load to set initial state
-  handleScroll();
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Tab functionality
+};
+document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.feature-tab');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -751,23 +627,6 @@
         const targetId = this.getAttribute('data-target');
         document.getElementById(targetId).classList.add('active');
       });
-    });
-    
-    // Close mobile menu when clicking a nav link
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 992) {
-          navbarCollapse.classList.remove('show');
-        }
-      });
-    });
-    
-    // Prevent AOS issues on mobile
-    window.addEventListener('resize', () => {
-      AOS.refresh();
     });
   });
 </script>
